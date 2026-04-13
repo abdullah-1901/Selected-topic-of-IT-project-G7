@@ -1,0 +1,18 @@
+Arduino sensor code IDE
+// MQ-135 Air Quality Sensor Code
+
+int sensorPin = A0;   // AO pin connected to A0
+int sensorValue = 0;
+
+void setup() {
+  Serial.begin(9600);   // start serial communication
+}
+
+void loop() {
+  sensorValue = analogRead(sensorPin);  // read sensor
+
+  Serial.print("AQI Value: ");
+  Serial.println(sensorValue);          // print value
+
+  delay(2000);  // wait 2 seconds
+}
